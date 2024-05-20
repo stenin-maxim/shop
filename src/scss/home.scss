@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+.header-top {
+    background-color: $black;
+    color: $white;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    .logo {
+        font-size: 25px;
+    }
+    a {
+        color: $white;
+        text-decoration: none;
+        &:hover {
+            color: red;
+        }
+    }
+    .fa-heart, .fa-cart-shopping {
+        font-size: 21px;
+        color: $gray-1;
+        cursor: pointer;
+        position: relative;
+        top: 2px;
+        &:hover {
+            color: $gray-2;
+        }
+    }
+}
