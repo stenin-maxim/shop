@@ -2,41 +2,28 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = (props: any) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [errorMessages, setErrorMessages] = useState({});
-
-    const navigate = useNavigate();
-
-    const onButtonClick = () => {
-        // You'll update this function later...
-    }
-
     return (
-        <form className='mainContainer'>
-            <div className='titleContainer'>
-                <label htmlFor="">Email</label>
-                <input
-                    value={email}
-                    placeholder="Enter your email here"
-                    onChange={(ev) => setEmail(ev.target.value)}
-                    className={'inputBox'}
-                />
-            </div>
-            <div className='inputContainer'>
-                <label>Password</label>
-                <input
-                    value={password}
-                    placeholder="Enter your password here"
-                    onChange={(ev) => setPassword(ev.target.value)}
-                    className={'inputBox'}
-                />
-            </div>
-            <br/>
-            <div className={'inputContainer'}>
-                <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'}/>
-            </div>
-        </form>
+        <div className="container">
+            <form>
+                <div className="mb-3">
+                    <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+                </div>
+                <label htmlFor="inputPassword5" className="form-label">Password</label>
+                <input type="password" id="inputPassword5" className="form-control" aria-describedby="passwordHelpBlock"/>
+                <div id="passwordHelpBlock" className="form-text">
+                    Ваш пароль должен состоять из 8–20 символов, содержать буквы и цифры и не должен содержать пробелов, специальных символов или смайлов.
+                </div>
+                <div className="form-check">
+                    <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+                    <label className="form-check-label" htmlFor="flexCheckDefault">
+                        Запомнить пароль
+                    </label>
+                </div>
+                <button type="submit" className="btn btn-primary mb-3">Войти</button>
+            </form>
+            <a href="">Зарегистрироваться</a>
+        </div>
     )
 }
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCartShopping, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faHeart, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './components/Login';
 import Home from './components/Home';
@@ -13,10 +13,10 @@ function App() {
     return (
         <div className="App">
             <header>
-                <div className="header-top">
+                <div className="header-top mb-4">
                     <div className="container">
                         <div className="row">
-                            <div className="col-6 logo">Барахолка</div>
+                            <div className="col-6 logo"><a href="/">Барахолка</a></div>
                             <div className="col-6 text-end">
                             <span>
                                 <FontAwesomeIcon icon={faHeart} />
@@ -30,7 +30,7 @@ function App() {
                         </div>
                     </div>
                 </div>
-                <div className="header-bottom">
+                <div className="header-bottom mb-4">
                     <div className="container">
                         <div className="row">
                             <div className="col-10">
@@ -42,8 +42,9 @@ function App() {
                                     </form>
                                 </div>
                             </div>
-                            <div className="col-2">
-                                <div className="location">Москва</div>
+                            <div className="col-2 d-flex align-items-center">
+                                <FontAwesomeIcon icon={faLocationDot} />
+                                <span className="ms-2">Москва</span>
                             </div>
                         </div>
                     </div>
@@ -57,6 +58,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
             </main>
+            <footer></footer>
         </div>
     );
 }
